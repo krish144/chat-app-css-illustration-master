@@ -1,16 +1,63 @@
 @import 'variables';
 @import 'mixins';
 
-*,body{
+*,::before,::after{
     margin:0;
     box-sizing:border-box;
     padding: 0;
+}
+
+body{
     font-family: $font-family;
+    background: $body-bg;
 }
 
 .container{
     @include flex-container;
     @include container(10%);
 }
+
+.mobile-container{
+    width: 290px;
+    height: 520px;
+    background:$white;
+    border-radius: 20px;
+    padding: 12px;
+    overflow: hidden;
+}
+
+.mobile-display{
+    background: $body-bg;
+    border-radius: 20px;
+    overflow: hidden
+}
+
+.mobile-header{
+    @include flex-container();
+    background: linear-gradient(45deg,$gradient-lightViolet,$gradient-lightMegenta);
+    padding: 25px 15px 10px;
+    color: $white;
+
+    div:first-child{
+        @include flex-container();
+
+        div:nth-child(2) img{
+            border-radius: 50%;
+            border: 2px solid $white;
+            margin-right: 5px;
+        }
+
+        h6{
+            font-size: 15px;
+        }
+
+        p{
+            font-size: 12px;
+        }
+    }
+
+}
+
+
 
 
