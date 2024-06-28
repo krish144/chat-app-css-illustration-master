@@ -1,7 +1,16 @@
+@import 'variables';
+@import 'mixins';
+
 *,body{
     margin:0;
     box-sizing:border-box;
     padding: 0;
+    font-family: $font-family;
+}
+
+.container{
+    @include flex-container;
+    @include container(10%);
 }
 
 
