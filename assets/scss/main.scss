@@ -15,20 +15,42 @@ body{
 .container{
     @include flex-container;
     @include container(10%);
+    position: relative;
+}
+
+.row{
+    flex: 1;
+    padding: 20px 0;
+    
 }
 
 .mobile-container{
     width: 290px;
     height: 520px;
     background:$white;
-    border-radius: 20px;
-    padding: 12px;
+    border-radius: $mobile-radius;
+    padding: 10px;
     overflow: hidden;
+    margin-left: 20%;
+
+    &::before{
+        content: '';
+        position: absolute;
+        left: -103px;
+        top: -26px;
+        display: block;
+        width: 450px;
+        height: 560px;
+        background: linear-gradient(90deg,$gradient-lightMegenta,$gradient-lightViolet);
+        border-radius: 0 0 50% 50%;
+        z-index: -1;
+    }
+
 }
 
 .mobile-display{
     background: $body-bg;
-    border-radius: 20px;
+    border-radius: $mobile-radius;
     overflow: hidden
 }
 
@@ -37,6 +59,7 @@ body{
     background: linear-gradient(45deg,$gradient-lightViolet,$gradient-lightMegenta);
     padding: 25px 15px 10px;
     color: $white;
+    position: relative;
 
     div:first-child{
         @include flex-container();
@@ -54,6 +77,19 @@ body{
         p{
             font-size: 12px;
         }
+    }
+
+    &::before{
+        content:'';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        display: block;
+        width: 140px;
+        height: 23px;
+        background-color: $white;
+        border-radius: 0 0 15px 15px;
     }
 
 }
