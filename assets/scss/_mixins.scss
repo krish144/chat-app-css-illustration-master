@@ -13,9 +13,8 @@
 @mixin msgContainer($text-color,$bg-color,$float-position){
     width: fit-content;
     max-width: 150px;
-    border-radius: 8px;
     padding: 5px 10px;
-    margin: 5px 0;
+    margin: 6px 5px;
     color:$text-color;
     background: $bg-color;
     font-size: 11px;

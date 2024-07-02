@@ -12,28 +12,14 @@
 body {
     font-family: $font-family;
     background: $body-bg;
+    overflow-x:hidden;
 }
 
 .container {
     @include flex-container;
     @include container(10%);
+    flex-wrap: wrap;
     position: relative;
-}
-
-.row {
-    flex: 1;
-    padding: 20px 0;
-}
-
-.mobile-container {
-    max-width: 290px;
-    height: auto;
-    background: $white;
-    border-radius: $mobile-radius;
-    padding: 10px;
-    overflow: hidden;
-    margin-left: 35%;
-
     &::before {
         content: "";
         position: absolute;
@@ -46,6 +32,48 @@ body {
         border-radius: 0 0 50% 50%;
         z-index: -1;
     }
+    &::after{
+    content: "";
+    position: absolute;
+    right: -183px;
+    bottom: 0px;
+    display: block;
+    width: 490px;
+    height: 95vh;
+    background: $chatLeft-bg;
+    border-radius:50% 50%  0 0 ;
+    z-index: -1;
+    }
+}
+
+.row {
+    flex: 1;
+    padding: 20px 0;
+    position: relative;
+    &:last-child{
+        h1{
+        color:$color-heading;
+        margin-bottom: 10px;
+        }
+        p{
+            color: $color-paragraph;
+            line-height: 28px;
+            max-width: 450px;
+        }
+      
+    }
+}
+
+.mobile-container {
+    max-width: 290px;
+    height: auto;
+    background: $white;
+    border-radius: $mobile-radius;
+    padding: 10px;
+    overflow: hidden;
+    margin-left: 35%;
+
+   
 }
 
 .mobile-display {
@@ -61,6 +89,7 @@ body {
     padding: 25px 15px 10px;
     color: $white;
     position: relative;
+    margin-bottom: 5px;
 
     div:first-child {
         @include flex-container();
@@ -100,14 +129,20 @@ body {
 .mobile-body {
     .recived-msg {
         @include msgContainer($color-chatLeft, $chatLeft-bg, left);
+        border-radius: 8px 8px 8px 0;
     }
     .send-msg {
         @include msgContainer($color-chatRight, $white, right);
+        border-radius: 8px 8px 0 8px;
     }
 
     .send-img-cotainer {
         @include msgContainer($color-chatRight, transparent, right);
         max-width: fit-content;
+        img{
+            border-radius: 10px;
+            padding: 0 2px;
+        }
     }
 
     .pricing-msg {
@@ -176,20 +211,32 @@ body {
     }
 
     .sending-container {
-        @include flex-container();
-        float: left;
-        clear: both;
+        position: relative;
+        input{
+            @include flex-container();
+       
         width: 95%;
         border-radius: 20px;
-        padding: 9px 10px 9px 20px;
         background: $white;
         margin: 11px 10px 10px;
+        padding: 9px 10px 9px 20px;
+        border: none;
+        width: 95%;
+        }
+
+        input::placeholder{
+            color:$color-placeholder;
+        }
 
         .send-btn {
+            position: absolute;
+            width: 60px;
             background: $sub-btn-bg;
             color: $color-white;
             border-radius: 50%;
             padding: 4px 8px;
         }
+
+       
     }
 }
