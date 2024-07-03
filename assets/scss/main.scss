@@ -27,7 +27,7 @@ body {
         top: 0px;
         display: block;
         width: 490px;
-        height: 95vh;
+        height: 500px;
         background: linear-gradient(90deg, $gradient-lightMegenta, $gradient-lightViolet);
         border-radius: 0 0 50% 50%;
         z-index: -1;
@@ -36,7 +36,7 @@ body {
     content: "";
     position: absolute;
     right: -183px;
-    bottom: 0px;
+    bottom: -100px;
     display: block;
     width: 490px;
     height: 95vh;
