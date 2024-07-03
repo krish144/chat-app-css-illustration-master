@@ -48,7 +48,7 @@ body {
 
 .row {
     flex: 1;
-    padding: 20px 0;
+    padding: 20px;
     position: relative;
     &:last-child{
         h1{
@@ -230,13 +230,67 @@ body {
 
         .send-btn {
             position: absolute;
-            width: 60px;
+            width: 29px;
             background: $sub-btn-bg;
             color: $color-white;
             border-radius: 50%;
             padding: 4px 8px;
+            bottom: 3px;
+            right: 11px;
         }
 
        
     }
 }
+
+@media(max-width:1100px){
+    .mobile-container{
+        margin-left: 15%;
+    }
+}
+
+@media(max-width:999px){
+    .container{
+        flex-direction: column;
+        padding: 40px 0;
+        &::before{
+            height: 500px;
+        }
+
+        &::after{
+            display: none;
+        }
+
+    }
+
+    .mobile-container{
+        margin-left: 0;
+        margin: auto;
+    }
+
+    .row{
+        width: 100%;
+        margin: auto;
+        text-align: center;
+        padding: 0;
+
+        &:last-child{
+            padding-top: 20px;
+            p{
+                max-width: none;
+                padding: 10px;
+
+            }
+        }
+    }
+}
+
+@media(max-width:600px){
+    .container{
+        &::before{
+            left: -291px;
+        }
+    }
+
+}
+
