@@ -15,7 +15,13 @@ body {
     overflow-x:hidden;
 }
 
+main{
+    overflow: hidden;
+}
+
 .container {
+    
+    height:110dvh;
     @include flex-container;
     @include container(10%);
     flex-wrap: wrap;
@@ -27,7 +33,7 @@ body {
         top: 0px;
         display: block;
         width: 490px;
-        height: 500px;
+        height: 520px;
         background: linear-gradient(90deg, $gradient-lightMegenta, $gradient-lightViolet);
         border-radius: 0 0 50% 50%;
         z-index: -1;
@@ -39,7 +45,7 @@ body {
     bottom: -100px;
     display: block;
     width: 490px;
-    height: 95vh;
+    height: 520px;
     background: $chatLeft-bg;
     border-radius:50% 50%  0 0 ;
     z-index: -1;
@@ -78,7 +84,7 @@ body {
 
 .mobile-display {
     background: $body-bg;
-    border-radius: $mobile-radius;
+    border-radius: 20px;
     overflow: hidden;
     height: fit-content;
 }
@@ -253,6 +259,7 @@ body {
     .container{
         flex-direction: column;
         padding: 40px 0;
+        height: fit-content;
         &::before{
             height: 500px;
         }
